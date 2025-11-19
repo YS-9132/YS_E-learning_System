@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "question": "ランサムウェアは、感染させたコンピュータのデータを暗号化し、元に戻す代わりに金銭を要求する悪質なマルウェアです。",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "正しい - ランサムウェアの説明として正確です",
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "誤り - ランサムウェアはデータ削除のみを要求します",
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "誤り - ランサムウェアは個人情報の盗用のみを目的としています",
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "誤り - ランサムウェアは金銭要求を行いません",
+        "is_correct": false
+      }
+    ],
+    "correct_answers": ["A"],
+    "multiple_choice": false
+  },
+  {
+    "id": 2,
+    "question": "ランサムウェア感染を防ぐための対策として、以下のうち有効なものはどれですか？（複数選択可）",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "OSとソフトウェアを定期的にアップデートする",
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "信頼できるセキュリティソフトをインストールして定期的にスキャンする",
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "不審なメール添付ファイルやリンクをクリックしない",
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "パスワードを強力にしておく必要はない",
+        "is_correct": false
+      },
+      {
+        "letter": "E",
+        "text": "重要なデータは定期的にバックアップする",
+        "is_correct": true
+      }
+    ],
+    "correct_answers": ["A", "B", "C", "E"],
+    "multiple_choice": true
+  },
+  {
+    "id": 3,
+    "question": "ランサムウェアに感染してしまった場合、最初に取るべき行動として正しいものはどれですか？",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "身代金を支払う",
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "感染したコンピュータをネットワークから切断し、管理者に報告する",
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "ファイルを復号化しようと試みる",
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "そのまま使用を続ける",
+        "is_correct": false
+      }
+    ],
+    "correct_answers": ["B"],
+    "multiple_choice": false
+  },
+  {
+    "id": 4,
+    "question": "企業のランサムウェア対策として、バックアップの重要性について述べた文として正しいものはどれですか？（複数選択可）",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "バックアップがあれば、身代金を支払わずにデータを復旧できる可能性が高い",
+        "is_correct": true
+      },
+      {
+        "letter": "B",
+        "text": "バックアップは毎日実施する必要がある",
+        "is_correct": false
+      },
+      {
+        "letter": "C",
+        "text": "バックアップは、メインシステムと物理的に分離して保管すべき",
+        "is_correct": true
+      },
+      {
+        "letter": "D",
+        "text": "バックアップファイルもランサムウェアの暗号化対象となる可能性がある",
+        "is_correct": true
+      },
+      {
+        "letter": "E",
+        "text": "月1回のバックアップで十分である",
+        "is_correct": false
+      }
+    ],
+    "correct_answers": ["A", "C", "D"],
+    "multiple_choice": true
+  },
+  {
+    "id": 5,
+    "question": "ランサムウェアの感染経路として最も一般的なものはどれですか？",
+    "choices": [
+      {
+        "letter": "A",
+        "text": "正規のウェブサイトからのダウンロード",
+        "is_correct": false
+      },
+      {
+        "letter": "B",
+        "text": "スパムメールの添付ファイルや悪意のあるリンク",
+        "is_correct": true
+      },
+      {
+        "letter": "C",
+        "text": "USBメモリの使用",
+        "is_correct": false
+      },
+      {
+        "letter": "D",
+        "text": "正規のメーラーの使用",
+        "is_correct": false
+      }
+    ],
+    "correct_answers": ["B"],
+    "multiple_choice": false
+  }
+]

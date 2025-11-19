@@ -1,0 +1,180 @@
+# E-ラーニングシステム設定ファイル
+# Teams運用版 + Azure AD SSO統合
+
+# ===== システム基本設定 =====
+system:
+  app_name: "E-ラーニングシステム"
+  app_version: "2.0.0"
+  database_path: "elearning.db"
+  authentication_method: "azure_ad"  # azure_ad または local
+  
+# ===== Azure AD SSO設定 =====
+azure_ad:
+  # Azure ADで登録したアプリケーション情報
+  client_id: "706a21a2-db28-41c0-9cd5-264446a5757a"
+  tenant_id: "003a1973-9f54-47d8-877d-edcf619c17a9"
+  client_secret: "a9d55242-5ce9-4daa-a110-41f19e7ce573"
+  authority: "https://login.microsoftonline.com/003a1973-9f54-47d8-877d-edcf619c17a9"
+  
+  # リダイレクトURI
+  redirect_uri: "http://localhost:8501"
+  
+  # APIスコープ
+  scopes: ["User.Read"]
+  
+  # 社員マスターファイル
+  employees_csv: "employees.csv"
+  
+  # ユーザー情報をAzure ADから取得するか、CSVから取得するか
+  user_source: "csv"  # csv または azure_ad
+  
+# ===== クイズ設定 =====
+quiz:
+  # クイズの回答時間制限（秒）
+  time_limit_seconds: 300      # 5分
+  
+  # 合格ライン（％）
+  passing_score_percent: 70
+  
+  # 1問あたりの配点
+  points_per_question: 20
+  
+  # 問題をシャッフルするか
+  shuffle_questions: false
+
+# ===== 教本設定 =====
+teaching_materials:
+  # 教本へのアクセス開始日（YYYY-MM-DD形式、空白の場合は制限なし）
+  access_start_date: ""
+  
+  # 教本へのアクセス終了日（YYYY-MM-DD形式、空白の場合は制限なし）
+  access_end_date: ""
+  
+  # 1日の最大閲覧時間（分）、0=無制限
+  daily_max_view_minutes: 0
+  
+  # PDFを埋め込み表示するか（trueの場合、falseの場合はダウンロード推奨）
+  embed_pdf: true
+
+# ===== ユーザー管理 =====
+users:
+  # 初期管理者ユーザー（初回起動時に自動作成）
+  initial_admin:
+    username: "admin"
+    password: "admin123"
+    email: "admin@example.com"
+    full_name: "管理者"
+  
+  # パスワードの最小文字数
+  min_password_length: 8
+  
+  # 連続ログイン失敗の上限回数
+  max_login_attempts: 5
+  
+  # ロックアウト時間（分）
+  lockout_minutes: 30
+
+# ===== メール通知設定 =====
+email:
+  # メール送信を有効にするか
+  enabled: false
+  
+  # SMTP サーバー設定
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  
+  # 送信者メールアドレス
+  sender_email: "your-email@gmail.com"
+  
+  # 送信者パスワード（アプリケーションパスワードを推奨）
+  sender_password: "your-app-password"
+  
+  # 管理者メールアドレス（複数指定可）
+  admin_emails:
+    - "admin@example.com"
+    - "manager@example.com"
+  
+  # ユーザーへの通知を送信するか
+  notify_users: true
+  
+  # 管理者へ報告を送信するか
+  notify_admin: true
+
+# ===== コース設定 =====
+courses:
+  # コース一覧（複数設定可）
+  default_course:
+    name: "ランサムウェア攻撃対策"
+    description: "ランサムウェア攻撃の基礎知識と対策方法を学びます"
+    
+    # PDFファイルパス（教本）
+    pdf_path: "materials/教本_ランサムウェア攻撃について.pdf"
+    
+    # PPTXファイルパス（問題）
+    pptx_path: "materials/問題_ランサムウェア攻撃対策.pptx"
+    
+    # クイズの回答時間制限（秒）
+    quiz_time_limit_seconds: 300
+    
+    # 合格ライン（％）
+    passing_score_percent: 70
+    
+    # アクセス開始日
+    access_start_date: "2024-01-01"
+    
+    # アクセス終了日
+    access_end_date: "2024-12-31"
+
+# ===== ファイルパス設定 =====
+file_paths:
+  # 教材ファイル保存フォルダ
+  materials_dir: "materials"
+  
+  # 抽出した問題データ保存場所
+  questions_json: "questions.json"
+  
+  # ログファイル保存フォルダ
+  logs_dir: "logs"
+
+# ===== ロギング設定 =====
+logging:
+  # ログレベル（DEBUG, INFO, WARNING, ERROR）
+  level: "INFO"
+  
+  # ログファイル名
+  file: "logs/elearning.log"
+  
+  # ログ保持日数
+  retention_days: 30
+
+# ===== Teams統合設定 =====
+teams_integration:
+  # Teams Webhookを使用するか
+  enabled: false
+  
+  # Teams WebhookのURL
+  webhook_url: "https://outlook.webhook.office.com/webhookb2/..."
+  
+  # Teams通知を送信するチャネル
+  channel: "general"
+
+# ===== Streamlit設定 =====
+streamlit:
+  # ページのタイトル
+  page_title: "E-ラーニングシステム"
+  
+  # ページのレイアウト（wide または centered）
+  layout: "wide"
+  
+  # ダークモードを有効にするか
+  dark_mode: false
+  
+  # サイドバーの初期状態（expanded または collapsed）
+  sidebar_state: "expanded"
+
+# ===== バージョン情報 =====
+version:
+  major: 1
+  minor: 0
+  patch: 0
+  last_updated: "2024-01-15"
